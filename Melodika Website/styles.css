@@ -88,8 +88,8 @@ input[type="text"], input[type="number"], select, textarea {
 
 button {
     display: inline-block;
-    background-color: #ffdeb8;
-    color: #532000;
+    background-color: #532000;
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -97,7 +97,8 @@ button {
 }
 
 button:hover {
-    background-color: #361f00;
+    background-color: #8a3500;
+    color: #ffffff;
 }
 
 footer {
