@@ -1,0 +1,121 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffdeb8;
+    color: #532000;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #361f00;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #532000;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #ffdeb8;
+    color: #532000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #532000;
+    color: #ffdeb8;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #b3612f;
+    color: #000000;
+    text-decoration: none;
+    border: #000000;
+    border: 10px;
+    border-radius: 5px;
+}
+
+input[type="text"], input[type="number"], select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.login-form, .register-form {
+    margin-top: 20px;
+}
+
+.login-form h2, .register-form h2 {
+    color: #333;
+}
