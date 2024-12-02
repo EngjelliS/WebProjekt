@@ -118,3 +118,139 @@ footer {
 .login-form h2, .register-form h2 {
     color: #333;
 }
+
+.faq {
+    background-color: #fff7e8;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.faq h2 {
+    text-align: center;
+    color: #532000;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #ffffff;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #532000;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #ffdeb8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    padding: 15px;
+    font-weight: bold;
+    background-color: #532000;
+    color: #ffffff;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-item summary:hover {
+    background-color: #8a3500;
+}
+
+.faq-item summary::marker {
+    content: '';
+}
+
+.faq-item summary::after {
+    content: "▼";
+    font-size: 14px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-item p {
+    padding: 15px;
+    margin: 0;
+    background-color: #fff7e8;
+    color: #532000;
+    border-top: 1px solid #532000;
+}.faq {
+    background-color: #fff7e8;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.faq h2 {
+    text-align: center;
+    color: #532000;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #ffffff;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #532000;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #ffdeb8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    padding: 15px;
+    font-weight: bold;
+    background-color: #532000;
+    color: #ffffff;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-item summary:hover {
+    background-color: #8a3500;
+}
+
+.faq-item summary::marker {
+    content: '';
+}
+
+.faq-item summary::after {
+    content: "▼";
+    font-size: 14px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-item p {
+    padding: 15px;
+    margin: 0;
+    background-color: #fff7e8;
+    color: #532000;
+    border-top: 1px solid #532000;
+}
