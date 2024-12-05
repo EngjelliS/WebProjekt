@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilfe - Melodika</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hilfe</h1>
+    </header>
+
+    <nav class="navbar">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
+        <ul class="nav-links">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="bestelluebersicht.html">Bestellübersicht</a></li>
+            <li><a href="hilfe.html">Hilfe</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="warenkorb.html"><img src="warenkorbicon.png" alt="Warenkorb" class="nav-icon"></a></li>
+            <li><a href="anmeldung.html"><img src="loginicon1.png" alt="Login" class="nav-icon"></a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="faq">
+            <h2>Häufig gestellte Fragen (FAQ)</h2>
+
+            <details class="faq-item">
+                <summary>1. Wie kann ich ein Produkt bestellen?</summary>
+                <p>Um ein Produkt zu bestellen, wählen Sie das gewünschte Produkt aus, fügen es Ihrem Warenkorb hinzu und gehen Sie zur Kasse.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>2. Welche Zahlungsmethoden akzeptieren Sie?</summary>
+                <p>Wir akzeptieren Kreditkarten, PayPal und Überweisungen. Wählen Sie die gewünschte Zahlungsmethode an der Kasse aus.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>3. Wie lange dauert die Lieferung?</summary>
+                <p>Die Lieferzeit beträgt in der Regel 3-5 Werktage. Sie erhalten eine Bestätigung, sobald Ihre Bestellung versendet wurde.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>4. Kann ich meine Bestellung stornieren?</summary>
+                <p>Ja, Sie können Ihre Bestellung innerhalb von 24 Stunden stornieren. Kontaktieren Sie dazu unseren Kundenservice.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>5. Wie kann ich einen Artikel zurückgeben?</summary>
+                <p>Sie können Artikel innerhalb von 14 Tagen nach Erhalt zurückgeben. Bitte kontaktieren Sie unseren Kundenservice für weitere Informationen.</p>
+            </details>
+        </section>
+
+        <section class="support-wrapper">
+            <div class="contact-form-box">
+                <h2>E-Mail Support</h2>
+                <form action="#" method="post">
+                    <label for="name">Ihr Name:</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="email">Ihre E-Mail:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="message">Ihre Nachricht:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+    
+                    <button type="submit">Absenden</button>
+                </form>
+            </div>
+    
+            <div class="phone-support-box">
+                <h2>Telefon-Support</h2>
+                <p>Sie können uns auch telefonisch erreichen:</p>
+                <p><strong>Telefonnummer:</strong> +49 123 456 7890</p>
+                <p><strong>Erreichbarkeit:</strong> Montag bis Freitag von 8:00 bis 18:00 Uhr</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-left">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-center">
+            <ul>
+                <li><a href="hilfe.html">Hilfe</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-right">
+            <a href="anmeldung.html">
+                <img src="loginicon1.png" alt="Login" class="nav-icon">
+            </a>
+        </div>
+    
+        <p>&copy; 2024 Melodika. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
