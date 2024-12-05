@@ -78,12 +78,23 @@ table th, table td {
     color: #ffffff;
 }
 
-input[type="text"], input[type="number"], select, textarea {
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], select, textarea {
     width: 100%;
-    padding: 4px;
-    margin: 10px 0;
-    border-radius: 5px;
+    max-width: 90%; 
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 button {
@@ -112,11 +123,22 @@ footer {
 }
 
 .login-form, .register-form {
-    margin-top: 20px;
+    background-color: #fff7e8; 
+    margin: 20px;
+    border: 1px solid #532000; 
+    border-radius: 20px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 50%; 
 }
 
 .login-form h2, .register-form h2 {
-    color: #333;
+    text-align: center;
+    color: #532000; 
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-shadow: 1px 1px #ffffff; 
 }
 
 .faq {
@@ -352,3 +374,4 @@ footer {
     margin: 10px 0;
     line-height: 1.6;
 }
+
