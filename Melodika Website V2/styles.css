@@ -71,7 +71,7 @@ nav ul li a:hover {
 
 /* Warenkorb-Sektion */
 .cart {
-    background-color: #f8f8f8;
+    background-color: #ADCCD9;;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -102,7 +102,7 @@ nav ul li a:hover {
 }
 
 .cart-table th {
-    background-color: #e0e0e0;
+    background-color: #ffffff;
     font-weight: bold;
 }
 
