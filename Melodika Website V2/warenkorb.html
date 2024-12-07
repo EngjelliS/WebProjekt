@@ -33,32 +33,53 @@
     <main class="container">
         <section class="cart">
             <h2>Ihr Warenkorb</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produkt</th>
-                        <th>Preis</th>
-                        <th>Anzahl</th>
-                        <th>Gesamt</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Studiokopfhörer AudioPro HD</td>
-                        <td>149,99 €</td>
-                        <td><input type="number" value="1" min="0"></td>
-                        <td>149,99 €</td>
-                    </tr>
-                    <tr>
-                        <td>Mikrofonstativ FlexiMic Stand</td>
-                        <td>34,99 €</td>
-                        <td><input type="number" value="1" min="0"></td>
-                        <td>34,99 €</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="total-price"><strong>Gesamtsumme:</strong> 184,98 €</p>
-            <a href="#checkout" class="cta-button">Zur Kasse</a>
+            <div class="cart-table-wrapper">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Produkt</th>
+                            <th>Preis</th>
+                            <th>Anzahl</th>
+                            <th>Gesamt</th>
+                            <th>Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="cart-item">
+                                    <img src="Produkt1.jpeg" alt="Studiokopfhörer AudioPro HD" class="cart-item-img">
+                                    <span>Studiokopfhörer AudioPro HD</span>
+                                </div>
+                            </td>
+                            <td>149,99 €</td>
+                            <td>
+                                <input type="number" value="1" min="0" class="quantity-input">
+                            </td>
+                            <td>149,99 €</td>
+                            <td><button class="remove-item">Entfernen</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cart-item">
+                                    <img src="Produkt2.jpeg" alt="Mikrofonstativ FlexiMic Stand" class="cart-item-img">
+                                    <span>Mikrofonstativ FlexiMic Stand</span>
+                                </div>
+                            </td>
+                            <td>34,99 €</td>
+                            <td>
+                                <input type="number" value="1" min="0" class="quantity-input">
+                            </td>
+                            <td>34,99 €</td>
+                            <td><button class="remove-item">Entfernen</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="cart-summary">
+                <p class="total-price"><strong>Gesamtsumme:</strong> 184,98 €</p>
+                <a href="#checkout" class="cta-button">Zur Kasse</a>
+            </div>
         </section>
 
         <section id="checkout" class="checkout">
