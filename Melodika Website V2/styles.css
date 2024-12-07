@@ -512,7 +512,6 @@ footer p {
     color: #253F62;
 }
 
-/* Dropdown Navigation */
 .menu-toggle-checkbox {
     display: none;
 }
@@ -527,7 +526,6 @@ footer p {
     top: 10px;
 }
 
-/* Mobile View */
 @media screen and (max-width: 1000px) {
     .nav-links {
         display: none;
