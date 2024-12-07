@@ -673,25 +673,43 @@ footer p {
     cursor: pointer;
     font-size: 24px;
     color: white;
-    position: absolute;
+    position: fixed;
     right: 20px;
-    top: 10px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #253F62;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    z-index: 20;
+}
+
+.menu-toggle-label:hover {
+    background-color: #ADCCD9;
+    color: #253F62;
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 1000px) {
     .nav-links {
-        display: none;
+        display: flex; /* Standardmäßig ist es ausgeblendet, wird bei "checked" sichtbar */
         flex-direction: column;
         background-color: rgba(37, 63, 98, 0.8);
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
+        position: fixed;
+        top: 20px;
+        right: -100%; /* Startposition außerhalb des Bildschirms */
+        z-index: 15;
+        width: 40%;
         padding: 10px 0;
+        transition: transform 0.5s ease, right 0.5s ease; /* Animation hinzufügen */
     }
 
     .menu-toggle-checkbox:checked + .menu-toggle-label + .nav-links {
-        display: flex;
+        right: 70px; /* Zielposition, um das Menü einzublenden */
+        transform: translateX(0); /* Eingeblendet */
     }
 
     .menu-toggle-label {
@@ -835,6 +853,60 @@ html {
 #slide3:checked ~ .slides {
     transform: translateX(-200%);
 }
+.hover-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 0 5%;
+    flex-wrap: wrap;
+}
 
+.hover-box {
+    flex: 1;
+    background-color: gray;
+    height: 150px;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.hover-box:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hover-box p {
+    margin: 0;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hover-box:hover p {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .hover-boxes {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .hover-box {
+        height: 150px; /* Beibehaltung der Standardhöhe */
+        width: 100%; /* Die Boxen nehmen die gesamte Breite ein */
+    }
+}
 
 
