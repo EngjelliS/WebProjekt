@@ -488,7 +488,7 @@ footer p {
 
 .text-and-image .text {
     flex: 1; 
-    text-align: left;
+    text-align: center;
 }
 
 .text-and-image .image {
