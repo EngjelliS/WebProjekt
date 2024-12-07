@@ -604,6 +604,7 @@ footer p {
     background-color: linear-gradient(to right, #CDE0E7, #E1DFE0, #E1C6D3);
     padding: 10px 20px;
     position: relative;
+    z-index: 10;
 }
 
 .nav-links {
@@ -668,6 +669,7 @@ footer p {
         text-align: center;
     }
 }
+
 
 .nav-icon {
     border-color: #DAC09D;
@@ -745,7 +747,8 @@ html {
     padding: 20px;
     background-color: #CDE0E7;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7)
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
 .product-slider h2 {
@@ -797,3 +800,6 @@ html {
 #slide3:checked ~ .slides {
     transform: translateX(-200%);
 }
+
+
+
