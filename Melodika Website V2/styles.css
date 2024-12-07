@@ -401,21 +401,52 @@ footer p {
     display: flex;
     align-items: flex-start; 
     gap: 20px; 
+    flex-direction: row-reverse; 
 }
 
 .text-and-image .text {
     flex: 1; 
+    text-align: left;
 }
 
 .text-and-image .image {
-    flex: 0 0 350px; 
+    flex: 1; 
+    max-width: 350px; 
 }
 
 .text-and-image .image img {
-    max-width: 100%;
+    width: 100%; 
+    height: auto; 
     border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px 
 }
+
+.product-details-box {
+    background-color: #F4F9FB; 
+    border: 1px solid #393939; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-top: 20px;
+}
+
+.product-details-box h3 {
+    font-size: 1.5rem; 
+    color: #393939; 
+    margin-bottom: 15px; 
+}
+
+.product-details-box ul {
+    list-style-type: disc; 
+    margin-left: 20px; 
+    padding-left: 0;
+}
+
+.product-details-box li {
+    margin-bottom: 10px; 
+    line-height: 1.6; 
+}
+
 
 .support-wrapper {
     display: flex;
