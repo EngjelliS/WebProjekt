@@ -529,6 +529,40 @@ footer p {
     line-height: 1.6; 
 }
 
+.recommendations-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.recommendation-box {
+    background-color: #fff;
+    border: 1px solid #393939;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block; 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.recommendation-box img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recommendation-box p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #393939;
+    font-weight: bold;
+}
+
 
 .support-wrapper {
     display: flex;
