@@ -86,23 +86,6 @@ nav ul li a:hover {
     color: #253F62;
 }
 
-button {
-    display: inline-block;
-    background-color: #253F62;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.0rem;
-    margin-top: 15px;
-}
-
-button:hover {
-    background-color: #ADCCD9;
-    color: #253F62;
-}
-
 footer {
     background-color: #253F62;
     color: #ffffff;
