@@ -69,23 +69,6 @@ nav ul li a:hover {
     padding: 20px;
 }
 
-.cta-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #253F62;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.0rem;
-    line-height: 1.2;
-}
-
-.cta-button:hover {
-    background-color: #ADCCD9;
-    color: #253F62;
-}
-
 footer {
     background-color: #253F62;
     color: #ffffff;
