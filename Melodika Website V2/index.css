@@ -1,0 +1,168 @@
+.hero-section {
+  background-color: #CDE0E7;
+  padding: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+.hero-section h1 {
+ margin: 0;
+ color: #253F62;
+}
+.hero-section p {
+ font-size: 1.2em;
+ color: #253F62;
+}
+.recommendations {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 20px;
+}
+.product-card {
+ background-color: #CDE0E7;
+ border-radius: 20px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+ padding: 20px;
+ text-align: center;
+}
+.product-card img {
+ max-width: 100%;
+ border-radius: 10px;
+}
+.product-card h3 {
+ margin: 15px 0 10px;
+}
+.product-card p {
+ color: #253F62;
+}
+.footer{
+ background-color: #253F62;
+ color: #ffffff;
+ padding: 20px;
+ text-align: center;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+ border-radius: 40px;
+ margin: 20px; 
+}
+img {
+ border: 1.5px solid #253F62;
+}
+.product-slider {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    background-color: #CDE0E7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.product-slider h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slides {
+    display: flex;
+    width: 100%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.slide p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+
+.brand-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 0 5%;
+    flex-wrap: wrap;
+}
+
+.brand-box {
+    flex: 1;
+    background-color: #CDE0E7;
+    height: 150px;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.brand-box:hover {
+    transform: scale(1.05);
+    background-color: #253F62;
+}
+
+.brand-box p {
+    margin: 0;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.brand-box:hover p {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .brand-boxes {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .brand-box {
+        height: 150px;
+        width: 100%;
+    }
+}
