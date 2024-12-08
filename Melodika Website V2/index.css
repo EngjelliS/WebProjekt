@@ -1,3 +1,427 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #CDE0E7, #E1DFE0, #E1C6D3);
+    color: #253F62;
+    line-height: 1.6;
+}
+
+header {
+    background-image: url('Hintergrundbild.png'); 
+    background-size: cover; 
+    background-position: top; 
+    color: rgb(50, 50, 50); 
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 3.0rem;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-shadow: 5px 5px 10px rgb(255, 255, 255); 
+}
+
+header p {
+    font-size: 1.5rem;
+    margin: 10px 0 0;
+    text-shadow: 4px 4px 8px rgb(255, 255, 255); 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #253F62;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 40px;
+    flex-wrap: wrap
+}
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #ADCCD9;
+    color: #253F62;
+    border-radius: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #253F62;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.0rem;
+    line-height: 1.2;
+}
+
+.cta-button:hover {
+    background-color: #ADCCD9;
+    color: #253F62;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #253F62;
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    margin: 0; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    border-radius: 0; 
+    flex-wrap: wrap; 
+}
+
+footer .footer-left,
+footer .footer-center,
+footer .footer-right {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+footer .footer-left ul,
+footer .footer-center ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footer-left li,
+footer .footer-center li {
+    margin-bottom: 23px;
+}
+
+footer .footer-left a,
+footer .footer-center a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+footer .footer-left a:hover,
+footer .footer-center a:hover {
+    color: #ADCCD9; 
+}
+
+footer .footer-right {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+}
+
+footer .nav-icon {
+    height: 100px; 
+    width: 100px; 
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+ footer .nav-icon:hover{
+    transform: scale(1.2); 
+    border-color: #253F62;
+ }
+
+ .footer-right .logo-footer {
+    width: 120px;  
+    height: auto;  
+    max-width: 100%;  
+    transition: transform 0.3s ease;
+    margin-top: -18px;  
+ }
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+    text-align: center; 
+    width: 100%; 
+    margin-top: 20px; 
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+
+    footer .footer-left,
+    footer .footer-center,
+    footer .footer-right {
+        width: 17%; 
+        margin-bottom: 20px; 
+        text-align: center; 
+    }
+
+    footer p {
+        margin-top: 10px; 
+        width: 100%; 
+        text-align: center; 
+    }
+}
+
+.text-and-image-wrapper {
+    background-color: #CDE0E7; 
+    border: 1px solid #393939; 
+    border-radius: 20px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 20px; 
+}
+
+.text-and-image {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+    flex-direction: row-reverse; 
+}
+
+.text-and-image .text {
+    flex: 1; 
+    text-align: center;
+}
+
+.text-and-image .image {
+    flex: 1; 
+    max-width: 350px; 
+}
+
+.text-and-image .image img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px 
+}
+
+.product-details-box {
+    background-color: #CDE0E7; 
+    border: 1px solid #393939; 
+    border-radius: 15px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-top: 20px;
+}
+
+.product-details-box h3 {
+    font-size: 1.5rem; 
+    color: #393939; 
+    margin-bottom: 15px; 
+}
+
+.product-details-box ul {
+    list-style-type: disc; 
+    margin-left: 20px; 
+    padding-left: 0;
+}
+
+.product-details-box li {
+    margin-bottom: 10px; 
+    line-height: 1.6; 
+}
+
+
+.recommendation-box img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.navbar {
+    background-color: linear-gradient(to right, #CDE0E7, #E1DFE0, #E1C6D3);
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #253F62;
+}
+
+.menu-toggle-checkbox {
+    display: none;
+}
+
+.menu-toggle-label {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #253F62;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    z-index: 20;
+}
+
+.menu-toggle-label:hover {
+    background-color: #ADCCD9;
+    color: #253F62;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-links {
+        display: flex; /* Standardmäßig ist es ausgeblendet, wird bei "checked" sichtbar */
+        flex-direction: column;
+        background-color: rgba(37, 63, 98, 0.8);
+        position: fixed;
+        top: 20px;
+        right: -100%; /* Startposition außerhalb des Bildschirms */
+        z-index: 15;
+        width: 40%;
+        padding: 10px 0;
+        transition: transform 0.5s ease, right 0.5s ease; /* Animation hinzufügen */
+    }
+
+    .menu-toggle-checkbox:checked + .menu-toggle-label + .nav-links {
+        right: 70px; /* Zielposition, um das Menü einzublenden */
+        transform: translateX(0); /* Eingeblendet */
+    }
+
+    .menu-toggle-label {
+        display: block;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+
+.nav-icon {
+    border-color: #DAC09D;
+    border: 0;
+    filter: invert(100%); 
+    height: 25px; 
+    width: 25px; 
+    object-fit: contain; 
+    vertical-align: middle; 
+    transition: transform 0.2s; 
+
+}
+
+.nav-icon:hover {
+    transform: scale(1.2); 
+    filter: invert(0%);
+    border-color: #ADCCD9;
+    
+}
+img {
+    border: 2px solid #253F62;
+}
+
+.logo {
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 0; 
+    height: 120px; 
+    width: 120px; 
+    object-fit: contain; 
+    vertical-align: middle; 
+    transition: transform 0.2s; 
+}
+
+.logo:hover {
+    transform: scale(1.2); 
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #253F62;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    z-index: 20;
+}
+
+.scroll-to-top.show {
+    display: block;
+}
+
+.scroll-to-top:hover {
+    background-color: #ADCCD9;
+    color: #253F62;
+    transform: scale(1.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 .hero-section {
   background-color: #CDE0E7;
   padding: 50px;
