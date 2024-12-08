@@ -45,6 +45,7 @@ nav ul {
     border-radius: 40px;
     flex-wrap: wrap
 }
+
 nav ul li {
     margin: 0 15px;
 }
@@ -67,6 +68,7 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 20px;
 }
+
 .cta-button {
     display: inline-block;
     margin-top: 15px;
@@ -88,6 +90,36 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], select, textarea {
+    width: 100%;
+    max-width: 90%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+button {
+    display: inline-block;
+    background-color: #253F62;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.0rem;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #ADCCD9;
+    color: #253F62;
 }
 
 footer {
@@ -194,74 +226,6 @@ footer p {
     }
 }
 
-.text-and-image-wrapper {
-    background-color: #CDE0E7; 
-    border: 1px solid #393939; 
-    border-radius: 20px; 
-    padding: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    margin-bottom: 20px; 
-}
-
-.text-and-image {
-    display: flex;
-    align-items: flex-start; 
-    gap: 20px; 
-    flex-direction: row-reverse; 
-}
-
-.text-and-image .text {
-    flex: 1; 
-    text-align: center;
-}
-
-.text-and-image .image {
-    flex: 1; 
-    max-width: 350px; 
-}
-
-.text-and-image .image img {
-    width: 100%; 
-    height: auto; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px 
-}
-
-.product-details-box {
-    background-color: #CDE0E7; 
-    border: 1px solid #393939; 
-    border-radius: 15px; 
-    padding: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    margin-top: 20px;
-}
-
-.product-details-box h3 {
-    font-size: 1.5rem; 
-    color: #393939; 
-    margin-bottom: 15px; 
-}
-
-.product-details-box ul {
-    list-style-type: disc; 
-    margin-left: 20px; 
-    padding-left: 0;
-}
-
-.product-details-box li {
-    margin-bottom: 10px; 
-    line-height: 1.6; 
-}
-
-
-.recommendation-box img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 
 
 .navbar {
@@ -325,21 +289,21 @@ footer p {
 
 @media screen and (max-width: 1000px) {
     .nav-links {
-        display: flex; /* Standardmäßig ist es ausgeblendet, wird bei "checked" sichtbar */
+        display: flex;
         flex-direction: column;
         background-color: rgba(37, 63, 98, 0.8);
         position: fixed;
         top: 20px;
-        right: -100%; /* Startposition außerhalb des Bildschirms */
+        right: -100%;
         z-index: 15;
         width: 40%;
         padding: 10px 0;
-        transition: transform 0.5s ease, right 0.5s ease; /* Animation hinzufügen */
+        transition: transform 0.5s ease, right 0.5s ease;
     }
 
     .menu-toggle-checkbox:checked + .menu-toggle-label + .nav-links {
-        right: 70px; /* Zielposition, um das Menü einzublenden */
-        transform: translateX(0); /* Eingeblendet */
+        right: 70px;
+        transform: translateX(0);
     }
 
     .menu-toggle-label {
@@ -422,56 +386,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.hero-section {
-  background-color: #CDE0E7;
-  padding: 50px;
-  text-align: center;
-  margin-bottom: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-}
-.hero-section h1 {
- margin: 0;
- color: #253F62;
-}
-.hero-section p {
- font-size: 1.2em;
- color: #253F62;
-}
-.recommendations {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
- gap: 20px;
-}
-.product-card {
- background-color: #CDE0E7;
- border-radius: 20px;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
- padding: 20px;
- text-align: center;
-}
-.product-card img {
- max-width: 100%;
- border-radius: 10px;
-}
-.product-card h3 {
- margin: 15px 0 10px;
-}
-.product-card p {
- color: #253F62;
-}
-.footer{
- background-color: #253F62;
- color: #ffffff;
- padding: 20px;
- text-align: center;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
- border-radius: 40px;
- margin: 20px; 
-}
-img {
- border: 1.5px solid #253F62;
-}
 .product-slider {
     width: 90%;
     margin: 0 auto;
@@ -533,8 +447,6 @@ img {
 #slide3:checked ~ .slides {
     transform: translateX(-200%);
 }
-
-
 .brand-boxes {
     display: flex;
     justify-content: space-between;
@@ -589,4 +501,71 @@ img {
         height: 150px;
         width: 100%;
     }
+}
+        .hero-section {
+            background-color: #CDE0E7;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        }
+        .hero-section h1 {
+            margin: 0;
+            color: #253F62;
+        }
+        .hero-section p {
+            font-size: 1.2em;
+            color: #253F62;
+        }
+
+        .recommendations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #CDE0E7;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .product-card h3 {
+            margin: 15px 0 10px;
+        }
+        .product-card p {
+            color: #253F62;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #253F62;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        .cta-button:hover {
+            background-color: #ADCCD9;
+            color: #253F62;
+        }
+
+        .footer{
+            
+            background-color: #253F62;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            border-radius: 40px;
+            margin: 20px;
+        
+                }
+        img {
+    border: 1.5px solid #253F62;
 }
