@@ -108,8 +108,8 @@ Der Slider wird durch die radio-buttons Logik in HTML und die checked Logik in C
 ```
 ### Burger Menü
 
-Die Navigationsleiste wird per mediaquary ab einem wert von 1000px ausgeblendet. in der gleichen mediaquary wird dann ein Hamburger menü eingeblendet, welches sich durch klicken öffnen und schließen lässt.
-Hier wird wieder über die "checked" logik in html und css überprüft, ob das menü angeklickt wurde oder nicht. 
+Die Navigationsleiste wird per Mediaquary ab einem Wert von 1000px ausgeblendet. In der gleichen Mediaquary wird dann ein Hamburger Menü eingeblendet, welches sich durch klicken öffnen und schließen lässt.
+Hier wird wieder über die "checked" Logik in html und css überprüft, ob das Menü angeklickt wurde oder nicht. 
 ```html
  <nav class="navbar">
         <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
@@ -155,4 +155,4 @@ Hier wird wieder über die "checked" logik in html und css überprüft, ob das m
   }
 }
 ```
-Desweiteren wird das Menü wieder über die checked logik in den Sichtbereich hereingeschoben.
+Desweiteren wird das Menü wieder über die checked Logik in den Sichtbereich hereingeschoben.
