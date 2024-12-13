@@ -58,3 +58,101 @@ Der Button wird durch CSS gestaltet und fest in der rechten unteren Ecke der Sei
     z-index: 20; 
 }
 ```
+
+### Slider
+
+Der Slider wird durch die radio-buttons Logik in HTML und die checked Logik in CSS etabliert. Es werden bestimmte werte ( in unserem Beispiel 0%, -100%, -200% ) mit den Radio buttons versehen. Sobald ein Button gechecked wird, ruft die CSS die nötige position ab, und slidet auf den Gewünschten bereich
+```html
+        <section class="product-slider">
+            <h2>Empfohlene Produkte</h2>
+            <div class="slider-wrapper">
+                <input type="radio" name="slider" id="slide1" checked>
+                <input type="radio" name="slider" id="slide2">
+                <input type="radio" name="slider" id="slide3">
+                <div class="slides">
+                    <div class="slide">
+                <img src="Produkt1.jpeg" width="300px" height="300px" align="center" alt="Studiokopfhörer AudioPro HD">
+                <h3>Studiokopfhörer AudioPro HD</h3>
+                <p>Klangqualität auf Studio-Niveau für präzises Hören und Mischen</p>
+                <a href="produktdetails1.html" class="cta-button">Mehr erfahren</a>
+            </div>
+            <div class="slide">
+                <img src="Produkt2.jpeg" width="300px" height="300px" align="center" alt="Mikrofonstativ FlexiMic Stand">
+                <h3>Mikrofonstativ FlexiMic Stand</h3>
+                <p>Robustes, höhenverstellbares Stativ für eine Vielzahl von Anwendungen</p>
+                <a href="produktdetails2.html" class="cta-button">Mehr erfahren</a>
+            </div>
+            <div class="slide">
+                <img src="Produkt3.jpeg" width="300px" height="300px" align="center" alt="Gitarren-Tuner TuneMate Pro">
+                <h3>Gitarren-Tuner TuneMate Pro</h3>
+                <p>Kompakter Clip-On-Tuner für Gitarren, Bässe und Ukulelen</p>
+                <a href="produktdetails3.html" class="cta-button">Mehr erfahren</a>
+            </div>
+        </div>
+    </div>
+</section>
+```
+```css
+
+#slide1:checked ~ .slides {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+```
+### Burger Menü
+
+Die Navigationsleiste wird per mediaquary ab einem wert von 1000px ausgeblendet. in der gleichen mediaquary wird dann ein Hamburger menü eingeblendet, welches sich durch klicken öffnen und schließen lässt.
+Hier wird wieder über die "checked" logik in html und css überprüft, ob das menü angeklickt wurde oder nicht. 
+```html
+ <nav class="navbar">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
+        <ul class="nav-links">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="bestelluebersicht.html">Bestellübersicht</a></li>
+            <li><a href="hilfe.html">Hilfe</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="warenkorb.html"><img src="warenkorbicon.png" alt="Warenkorb" class="nav-icon"></a></li>
+            <li><a href="anmeldung.html"><img src="loginicon1.png" alt="Login" class="nav-icon"></a></li>
+        </ul>
+    </nav>
+```
+```css
+@media screen and (max-width: 1000px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(37, 63, 98, 0.8);
+    position: fixed;
+    top: 20px;
+    right: -100%;
+    z-index: 15;
+    width: 40%;
+    padding: 10px 0;
+    transition: transform 0.5s ease, right 0.5s ease;
+  }
+
+  .menu-toggle-checkbox:checked + .menu-toggle-label + .nav-links {
+    right: 70px;
+    transform: translateX(0);
+  }
+
+  .menu-toggle-label {
+    display: block;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+```
+Desweiteren wird das Menü wieder über die checked logik in den Sichtbereich hereingeschoben.
