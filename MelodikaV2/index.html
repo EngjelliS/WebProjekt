@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkte - Melodika</title>
+    <title>Startseite - Melodika</title>
     <link rel="icon" type="image/png" href="Firmenlogo.png">
-    <link rel="stylesheet" href="produkte.css">
-</head>
+    <link rel="stylesheet" href="index.css">
+
 
 <div id="top"></div>
 
 <body>
     <header>
-        <h1>Unsere Produkte</h1>
+        <h1>Melodika</h1>
         <a href="index.html"><img src="Firmenlogo.png" alt="Startseite" class="logo"></a>
     </header>
 
@@ -31,44 +31,61 @@
     </nav>
 
     <main class="container">
-        <section class="product-list">
-            <div class="product-card">
+        <section class="hero-section">
+            <h1>Willkommen zu Ihrem Lieblingsshop!</h1>
+            <p>Wir bieten Ihnen die besten Produkte zu großartigen Preisen. Stöbern Sie in unseren Empfehlungen!</p>
+        </section>
+
+        <section class="product-slider">
+            <h2>Empfohlene Produkte</h2>
+            <div class="slider-wrapper">
+                <input type="radio" name="slider" id="slide1" checked>
+                <input type="radio" name="slider" id="slide2">
+                <input type="radio" name="slider" id="slide3">
+                <div class="slides">
+                    <div class="slide">
                 <img src="Produkt1.jpeg" width="300px" height="300px" align="center" alt="Studiokopfhörer AudioPro HD">
                 <h3>Studiokopfhörer AudioPro HD</h3>
-                <p>Preis: 149,99 €</p>
-                <a href="produktdetails1.html" class="cta-button">Details anzeigen</a>
+                <p>Klangqualität auf Studio-Niveau für präzises Hören und Mischen</p>
+                <a href="produktdetails1.html" class="cta-button">Mehr erfahren</a>
             </div>
-            <div class="product-card">
+            <div class="slide">
                 <img src="Produkt2.jpeg" width="300px" height="300px" align="center" alt="Mikrofonstativ FlexiMic Stand">
                 <h3>Mikrofonstativ FlexiMic Stand</h3>
-                <p>Preis: 34,99 €</p>
-                <a href="produktdetails2.html" class="cta-button">Details anzeigen</a>
+                <p>Robustes, höhenverstellbares Stativ für eine Vielzahl von Anwendungen</p>
+                <a href="produktdetails2.html" class="cta-button">Mehr erfahren</a>
             </div>
-            <div class="product-card">
+            <div class="slide">
                 <img src="Produkt3.jpeg" width="300px" height="300px" align="center" alt="Gitarren-Tuner TuneMate Pro">
                 <h3>Gitarren-Tuner TuneMate Pro</h3>
-                <p>Preis: 19,99 €</p>
-                <a href="produktdetails3.html" class="cta-button">Details anzeigen</a>
+                <p>Kompakter Clip-On-Tuner für Gitarren, Bässe und Ukulelen</p>
+                <a href="produktdetails3.html" class="cta-button">Mehr erfahren</a>
             </div>
-            <div class="product-card">
-                <img src="Produkt4.jpeg" width="300px" height="300px" align="center" alt="Digitales Metronom TempoMaster Pro">
-                <h3>Digitales Metronom TempoMaster Pro</h3>
-                <p>Preis: 39,99 €</p>
-                <a href="produktdetails4.html" class="cta-button">Details anzeigen</a>
-            </div>
-            <div class="product-card">
-                <img src="Produkt5.jpeg" width="300px" height="300px" align="center" alt="Keyboard-Pedal ProSustain FX">
-                <h3>Keyboard-Pedal ProSustain FX</h3>
-                <p>Preis: 24,99 €</p>
-                <a href="produktdetails5.html" class="cta-button">Details anzeigen</a>
-            </div>
-            <div class="product-card">
-                <img src="Produkt6.jpeg" width="300px" height="300px" align="center" alt="Gitarren-Effektpedal RockRiot Distortion X">
-                <h3>Gitarren-Effektpedal RockRiot Distortion X</h3>
-                <p>Preis: 59,99 €</p>
-                <a href="produktdetails6.html" class="cta-button">Details anzeigen</a>
-            </div>
-        </section>
+        </div>
+    </div>
+</section>
+<section class="brand-boxes">
+    <div class="brand-box">
+        <div class="text-overlay">
+            <p>Marke A: Qualität und Innovation</p>
+        </div>
+        <img src="MarkeA.jpg" alt="MarkeA">
+    </div>
+    <div class="brand-box">
+        <div class="text-overlay">
+            <p>Marke B: Stilvoll und zuverlässig</p>
+        </div>
+        <img src="MarkeB.jpg" alt="MarkeB">
+    </div>
+    <div class="brand-box">
+        <div class="text-overlay">
+            <p>Marke C: Beste Leistung garantiert</p>
+        </div>
+        <img src="MarkeC.jpg" alt="MarkeC">
+    </div>
+</section>
+
+  
     </main>
 
     <a href="#top" class="scroll-to-top" title="Zurück nach oben">⬆</a>
@@ -93,6 +110,9 @@
         </div>
     
         <p>&copy; 2024 Melodika. Alle Rechte vorbehalten.</p>
+        <p>Achtung !</p>
+        <p>Dies ist ein studentisches Projekt! Wir übernehmen keine Haftung!</p>
     </footer>
+    
 </body>
 </html>

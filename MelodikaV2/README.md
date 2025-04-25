@@ -7,7 +7,7 @@ Jede HTML-Datei hat ihre eigene CSS-Datei. Diese ist jeweils genauso benannt wie
 
 ## Besonderheiten im Code
 
-#### FAQ-Breich
+#### FAQ-Bereich
 
 Der FAQ-Bereich auf der Hilfeseite wurde mithilfe der HTML-Elemente "details" und "summary" gestaltet. Die Fragen werden dabei im "summary"-Tag hinterlegt, sodass sie auf den ersten Blick sichtbar sind. Beim Anklicken einer Frage wird die dazugehörige Antwort ausgeklappt und unterhalb des "summary"-Tags angezeigt.
 

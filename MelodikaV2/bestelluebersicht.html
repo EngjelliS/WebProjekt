@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmeldung - Melodika</title>
+    <title>Bestellübersicht - Melodika</title>
     <link rel="icon" type="image/png" href="Firmenlogo.png">
-    <link rel="stylesheet" href="anmeldung.css">
+    <link rel="stylesheet" href="bestelluebersicht.css">
 </head>
 
 <div id="top"></div>
 
 <body>
     <header>
-        <h1>Anmeldung / Registrierung</h1>
+        <h1>Bestellübersicht</h1>
         <a href="index.html"><img src="Firmenlogo.png" alt="Startseite" class="logo"></a>
     </header>
 
@@ -31,42 +31,28 @@
     </nav>
 
     <main class="container">
-        <section class="login-form">
-            <h2>Login</h2>
-            <form action="#" method="post">
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" required>
+        <section class="order-summary">
+            <h2>Ihre Bestellung</h2>
+            <p><strong>Studiokopfhörer AudioPro HD</strong> - 1 Stück - 149,99 €</p>
+            <p><strong>Mikrofonstativ FlexiMic Stand</strong> - 1 Stück - 34,99 €</p>
+            <p><strong>Gesamtsumme:</strong> 184,98 €</p>
 
-                <label for="password">Passwort:</label>
-                <input type="password" id="password" name="password" required>
+            <h3>Lieferadresse</h3>
+            <p>Max Mustermann<br>Straße 123<br>12345 Musterstadt<br>Deutschland</p>
 
-                <button type="submit">Anmelden</button>
-            </form>
-        </section>
+            <h3>Zahlungsart</h3>
+            <p>Visa</p>
 
-        <section class="register-form">
-            <h2>Registrierung</h2>
-            <form action="#" method="post">
-                <label for="reg-name">Ihr Name:</label>
-                <input type="text" id="reg-name" name="reg-name" required>
+            <h3>Lieferinformationen</h3>
+            <p>Bitte an der Hintertür abgeben.</p>
 
-                <label for="reg-email">E-Mail:</label>
-                <input type="email" id="reg-email" name="reg-email" required>
-
-                <label for="reg-password">Passwort:</label>
-                <input type="password" id="reg-password" name="reg-password" required>
-
-                <label for="reg-password-confirm">Passwort bestätigen:</label>
-                <input type="password" id="reg-password-confirm" name="reg-password-confirm" required>
-
-                <button type="submit">Registrieren</button>
-            </form>
+            <a href="index.html" class="cta-button">Zurück zur Startseite</a>
         </section>
     </main>
 
     <a href="#top" class="scroll-to-top" title="Zurück nach oben">⬆</a>
 
-    <footer>
+   <footer>
         <div class="footer-left">
             <ul>
                 <li><a href="index.html">Startseite</a></li>
@@ -86,6 +72,8 @@
         </div>
     
         <p>&copy; 2024 Melodika. Alle Rechte vorbehalten.</p>
+        <p>Dies ist ein studentisches Projekt! Wir übernehmen keine Haftung!</p>
+
     </footer>
 </body>
 </html>
