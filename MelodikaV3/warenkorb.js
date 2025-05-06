@@ -386,26 +386,34 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Versandadresse formatieren
-        const firstName = formData.get('first-name') || '';
-        const lastName = formData.get('last-name') || '';
-        const address = formData.get('address') || '';
-        const city = formData.get('city') || '';
-        const zip = formData.get('zip') || '';
-        const country = formData.get('country') || 'Deutschland';
+        // Kundendaten sammeln
+        const email = formData.get('email') || '';
+        const phone = formData.get('phone') || '';
         
-        const shippingAddress = `${firstName} ${lastName}\n${address}\n${zip} ${city}\n${country}`;
+        // Versandadresse formatieren
+        // WICHTIG: Auf die richtigen IDs aus dem HTML-Formular zugreifen
+        const firstName = formData.get('delivery-name') || '';
+        // Namen in Vor- und Nachname aufteilen (falls als ein Feld eingegeben)
+        const nameParts = firstName.split(' ');
+        const lastName = nameParts.length > 1 ? nameParts.pop() : '';
+        const firstNameOnly = nameParts.join(' ');
+        
+        const address = formData.get('delivery-street') || '';
+        const city = formData.get('delivery-city') || '';
+        const zip = formData.get('delivery-zip') || '';
+        const country = formData.get('delivery-country') || 'Deutschland';
+        
+        const shippingAddress = `${firstName}\n${address}\n${zip} ${city}\n${country}`;
         
         // Rechnungsadresse (entweder dieselbe wie Versandadresse oder separate)
         let billingAddress = shippingAddress;
         if (!sameAddressCheckbox.checked) {
-            const bFirst = formData.get('billing-first-name') || '';
-            const bLast  = formData.get('billing-last-name')  || '';
-            const bAddr  = formData.get('billing-address')    || '';
-            const bCity  = formData.get('billing-city')       || '';
-            const bZip   = formData.get('billing-zip')        || '';
-            const bCountry = formData.get('billing-country')  || 'Deutschland';
-            billingAddress = `${bFirst} ${bLast}\n${bAddr}\n${bZip} ${bCity}\n${bCountry}`;
+            const bName = formData.get('billing-name') || '';
+            const bAddr = formData.get('billing-street') || '';
+            const bCity = formData.get('billing-city') || '';
+            const bZip = formData.get('billing-zip') || '';
+            const bCountry = formData.get('billing-country') || 'Deutschland';
+            billingAddress = `${bName}\n${bAddr}\n${bZip} ${bCity}\n${bCountry}`;
         }
         
         // Zahlungsmethode und Info
@@ -422,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'paypal':
                 paymentMethodText = 'PayPal';
-                paymentInfo = formData.get('email') || '';
+                paymentInfo = email;
                 break;
             case 'instant-transfer':
                 paymentMethodText = 'Sofortüberweisung';
@@ -437,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Lieferhinweise
-        const shippingInfo = formData.get('shipping-notes') || 'Standard-Lieferung';
+        const shippingInfo = formData.get('delivery-notes') || 'Standard-Lieferung';
         
         // Bestellobjekt erstellen
         const order = {
@@ -446,8 +454,13 @@ document.addEventListener('DOMContentLoaded', function() {
             status: 'pending',
             statusText: 'In Bearbeitung',
             products: orderProducts,
-            address: shippingAddress, // Hier verwenden wir die Versandadresse
-            billingAddress: billingAddress, // Hier speichern wir die Rechnungsadresse separat
+            customer: {
+                email: email,
+                phone: phone,
+                fullName: firstName
+            },
+            address: shippingAddress,
+            billingAddress: billingAddress,
             paymentMethod: paymentMethodText,
             paymentInfo: paymentInfo,
             shippingInfo: shippingInfo,
