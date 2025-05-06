@@ -11,7 +11,6 @@
 </head>
 <body>
     <button class="dark-mode-toggle" id="darkModeToggle">🌓</button>
-
     <header class="nav-container"> 
         <nav class="global-nav">
             <div class="nav-wrapper">
@@ -46,7 +45,6 @@
             </div>
         </nav>
     </header>
-
     <main class="cart-page">
         <section class="page-hero">
             <div class="hero-content fade-in">
@@ -54,7 +52,6 @@
                 <p>Ihre ausgewählten Produkte</p>
             </div>
         </section>
-
         <section class="cart-section" id="cart-section">
             <div class="cart-container fade-in">
                 <div class="cart-header">
@@ -97,23 +94,33 @@
                 
                 <form id="checkout-form" class="checkout-form">
                     <div class="form-section">
-                        <h3 class="section-title">Lieferadresse</h3>
+                        <h3 class="section-title">Kontaktinformationen</h3>
                         <div class="form-group">
-                            <input type="text" id="delivery-name" placeholder="Vor- und Nachname" required>
+                            <input type="email" id="email" name="email" placeholder="E-Mail" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="delivery-street" placeholder="Straße und Hausnummer" required>
+                            <input type="tel" id="phone" name="phone" placeholder="Telefonnummer" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 class="section-title">Lieferadresse</h3>
+                        <div class="form-group">
+                            <input type="text" id="delivery-name" name="delivery-name" placeholder="Vor- und Nachname" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="delivery-street" name="delivery-street" placeholder="Straße und Hausnummer" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group half">
-                                <input type="text" id="delivery-zip" placeholder="PLZ" required>
+                                <input type="text" id="delivery-zip" name="delivery-zip" placeholder="PLZ" required>
                             </div>
                             <div class="form-group half">
-                                <input type="text" id="delivery-city" placeholder="Stadt" required>
+                                <input type="text" id="delivery-city" name="delivery-city" placeholder="Stadt" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <select id="delivery-country" required>
+                            <select id="delivery-country" name="delivery-country" required>
                                 <option value="" disabled selected>Land auswählen</option>
                                 <option value="DE">Deutschland</option>
                                 <option value="AT">Österreich</option>
@@ -131,21 +138,21 @@
                         
                         <div id="billing-address-fields" style="display: none;">
                             <div class="form-group">
-                                <input type="text" id="billing-name" placeholder="Vor- und Nachname">
+                                <input type="text" id="billing-name" name="billing-name" placeholder="Vor- und Nachname">
                             </div>
                             <div class="form-group">
-                                <input type="text" id="billing-street" placeholder="Straße und Hausnummer">
+                                <input type="text" id="billing-street" name="billing-street" placeholder="Straße und Hausnummer">
                             </div>
                             <div class="form-row">
                                 <div class="form-group half">
-                                    <input type="text" id="billing-zip" placeholder="PLZ">
+                                    <input type="text" id="billing-zip" name="billing-zip" placeholder="PLZ">
                                 </div>
                                 <div class="form-group half">
-                                    <input type="text" id="billing-city" placeholder="Stadt">
+                                    <input type="text" id="billing-city" name="billing-city" placeholder="Stadt">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <select id="billing-country">
+                                <select id="billing-country" name="billing-country">
                                     <option value="" disabled selected>Land auswählen</option>
                                     <option value="DE">Deutschland</option>
                                     <option value="AT">Österreich</option>
@@ -158,7 +165,7 @@
                     <div class="form-section">
                         <h3 class="section-title">Zahlungsart</h3>
                         <div class="form-group">
-                            <select id="payment-method" required>
+                            <select id="payment-method" name="payment-method" required>
                                 <option value="" disabled selected>Zahlungsart wählen</option>
                                 <option value="credit-card">Kreditkarte</option>
                                 <option value="paypal">PayPal</option>
@@ -169,17 +176,17 @@
                         
                         <div id="credit-card-fields" style="display: none;">
                             <div class="form-group">
-                                <input type="text" id="cc-name" placeholder="Name des Karteninhabers">
+                                <input type="text" id="cc-name" name="cc-name" placeholder="Name des Karteninhabers">
                             </div>
                             <div class="form-group">
-                                <input type="text" id="cc-number" placeholder="Kartennummer">
+                                <input type="text" id="cc-number" name="cc-number" placeholder="Kartennummer">
                             </div>
                             <div class="form-row">
                                 <div class="form-group half">
-                                    <input type="text" id="cc-expiry" placeholder="MM/JJ">
+                                    <input type="text" id="cc-expiry" name="cc-expiry" placeholder="MM/JJ">
                                 </div>
                                 <div class="form-group half">
-                                    <input type="text" id="cc-cvv" placeholder="CVV">
+                                    <input type="text" id="cc-cvv" name="cc-cvv" placeholder="CVV">
                                 </div>
                             </div>
                         </div>
@@ -188,7 +195,7 @@
                     <div class="form-section">
                         <h3 class="section-title">Lieferhinweise</h3>
                         <div class="form-group">
-                            <textarea id="delivery-notes" placeholder="Besondere Hinweise zur Lieferung (optional)" rows="3"></textarea>
+                            <textarea id="delivery-notes" name="delivery-notes" placeholder="Besondere Hinweise zur Lieferung (optional)" rows="3"></textarea>
                         </div>
                     </div>
                     
