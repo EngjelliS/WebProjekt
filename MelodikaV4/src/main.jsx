@@ -1,6 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import ReactDOM from "react-dom";
+import { ThemeProvider } from "./context/ThemeContext";
+import App from "./App";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -34,9 +35,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
-  </React.StrictMode>
+    <ThemeProvider>
+      <App /> {/* Wrap App component with ThemeProvider */}
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );

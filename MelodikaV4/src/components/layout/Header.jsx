@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import Navigation from "./Navigation";
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
 const Header = () => {
-  const { darkMode, toggleTheme } = useContext(ThemeContext);
-
   return (
     <HeaderContainer>
       <Nav>
@@ -15,19 +14,10 @@ const Header = () => {
               <Logo src="/src/assets/Firmenlogo.png" alt="Melodika" />
             </Link>
           </LogoWrapper>
-          
-          <NavMenu>
-            <NavItem><Link to="/">Startseite</Link></NavItem>
-            <NavItem><Link to="/produkte">Produkte</Link></NavItem>
-            <NavItem><Link to="/bestelluebersicht">Bestellübersicht</Link></NavItem>
-            <NavItem><Link to="/hilfe">Hilfe</Link></NavItem>
-            <NavItem><Link to="/ueber-uns">Über uns</Link></NavItem>
-          </NavMenu>
+
+          <Navigation />
 
           <NavActions>
-            <ThemeButton onClick={toggleTheme}>
-              {darkMode ? '☀️' : '🌙'}
-            </ThemeButton>
             <CartIcon to="/warenkorb">🛒</CartIcon>
             <UserIcon to="/anmeldung">👤</UserIcon>
           </NavActions>
@@ -89,7 +79,6 @@ const NavItem = styled.li`
     }
   }
 `;
-
 const NavActions = styled.div`
   display: flex;
   align-items: center;
@@ -103,7 +92,6 @@ const ThemeButton = styled.button`
   cursor: pointer;
   padding: 5px;
 `;
-
 const CartIcon = styled(Link)`
   font-size: 2rem;
   text-decoration: none;

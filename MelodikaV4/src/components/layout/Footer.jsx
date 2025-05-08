@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Footer = () => {
   return (
@@ -8,7 +8,8 @@ const Footer = () => {
         <FooterSection>
           <FooterTitle>Melodika</FooterTitle>
           <FooterText>
-            Ihr vertrauenswürdiger Partner für hochwertige Musikinstrumente und Zubehör
+            Ihr vertrauenswürdiger Partner für hochwertige Musikinstrumente und
+            Zubehör
           </FooterText>
         </FooterSection>
 
@@ -43,6 +44,12 @@ const Footer = () => {
 
       <FooterBottom>
         <Copyright>© 2024 Melodika. Alle Rechte vorbehalten.</Copyright>
+        <div style={{ textAlign: "center", marginTop: "1rem" }}>
+          <p style={{ color: "red", fontWeight: "bold" }}>
+            ⚠️ Achtung! Dies ist ein studentisches Projekt! Wir übernehmen keine
+            Haftung!
+          </p>
+        </div>
       </FooterBottom>
     </FooterContainer>
   );

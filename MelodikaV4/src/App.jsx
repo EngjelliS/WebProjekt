@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
-import Footer from "./components/layout/Footer";
+import Footer from "./components/layout/Footer"; 
+import Header from "./components/layout/Header"; 
 import AppRouter from "./routes/AppRouter"; 
 
 const GlobalStyle = createGlobalStyle`
@@ -139,9 +140,10 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
+      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <AppRouter />
-      {/* <Footer /> */}
-      
+      <Footer />  {/* Include Footer here */}
+
       {/* Scroll-to-Top Button */}
       <button
         className={`scroll-to-top ${showScrollToTop ? "visible" : ""}`}
