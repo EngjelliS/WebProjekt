@@ -1,5 +1,5 @@
-import React from 'react';
 import styled, { css } from 'styled-components'; 
+import React, { useState, useEffect } from 'react';
 
 const Anmeldung = () => {
   const [activeTab, setActiveTab] = useState('login');
@@ -13,6 +13,46 @@ const Anmeldung = () => {
     remember: false,
     terms: false
   });
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    const rememberedEmail = localStorage.getItem('rememberedEmail');
+    if (rememberedEmail) {
+      setFormData(prev => ({ ...prev, email: rememberedEmail, remember: true }));
+    }
+  }, []);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(u => u.email === formData.email && u.password === formData.password);
+    if (user) {
+      if (formData.remember) {
+        localStorage.setItem('rememberedEmail', formData.email);
+      } else {
+        localStorage.removeItem('rememberedEmail');
+      }
+      setMessage('Erfolgreich angemeldet!');
+    } else {
+      setMessage('E-Mail oder Passwort ist falsch.');
+    }
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const { regEmail, regPassword, regPasswordConfirm, regName, terms } = formData;
+    if (!terms) return setMessage('Bitte akzeptiere die AGB.');
+    if (regPassword !== regPasswordConfirm) return setMessage('Passwörter stimmen nicht überein.');
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    if (users.find(u => u.email === regEmail)) {
+      return setMessage('E-Mail ist bereits registriert.');
+    }
+    users.push({ name: regName, email: regEmail, password: regPassword });
+    localStorage.setItem('users', JSON.stringify(users));
+    setMessage('Registrierung erfolgreich. Jetzt anmelden.');
+    setActiveTab('login');
+  };
 
   return (
     <Main>
@@ -25,57 +65,32 @@ const Anmeldung = () => {
 
       <AuthContainer>
         <AuthTabs>
-          <TabButton 
-            active={activeTab === 'login'} 
-            onClick={() => setActiveTab('login')}
-          >
-            Anmelden
-          </TabButton>
-          <TabButton 
-            active={activeTab === 'register'} 
-            onClick={() => setActiveTab('register')}
-          >
-            Registrieren
-          </TabButton>
+          <TabButton active={activeTab === 'login'} onClick={() => setActiveTab('login')}>Anmelden</TabButton>
+          <TabButton active={activeTab === 'register'} onClick={() => setActiveTab('register')}>Registrieren</TabButton>
         </AuthTabs>
 
         <AuthFormsWrapper>
+          {message && <p style={{ textAlign: 'center', color: 'red' }}>{message}</p>}
+
           {activeTab === 'login' ? (
             <AuthForm className="active">
               <FormInner>
                 <h2>Bei Melodika anmelden</h2>
-                <form onSubmit={(e) => e.preventDefault()}>
+                <form onSubmit={handleLogin}>
                   <FormGroup>
-                    <FormControl
-                      type="email"
-                      id="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    />
-                    <FormLabel htmlFor="email">E-Mail</FormLabel>
+                    <FormControl type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} placeholder=" " />
+                    <FormLabel>E-Mail</FormLabel>
                   </FormGroup>
 
                   <FormGroup>
-                    <FormControl
-                      type="password"
-                      id="password"
-                      required
-                      value={formData.password}
-                      onChange={(e) => setFormData({...formData, password: e.target.value})}
-                    />
-                    <FormLabel htmlFor="password">Passwort</FormLabel>
+                    <FormControl type="password" required value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})} placeholder=" " />
+                    <FormLabel>Passwort</FormLabel>
                   </FormGroup>
 
                   <FormOptions>
                     <RememberMe>
-                      <input
-                        type="checkbox"
-                        id="remember"
-                        checked={formData.remember}
-                        onChange={(e) => setFormData({...formData, remember: e.target.checked})}
-                      />
-                      <label htmlFor="remember">Angemeldet bleiben</label>
+                      <input type="checkbox" checked={formData.remember} onChange={(e) => setFormData({...formData, remember: e.target.checked})} />
+                      <label>Angemeldet bleiben</label>
                     </RememberMe>
                     <ForgotPassword href="#">Passwort vergessen?</ForgotPassword>
                   </FormOptions>
@@ -88,7 +103,34 @@ const Anmeldung = () => {
             <AuthForm className="active">
               <FormInner>
                 <h2>Neues Konto erstellen</h2>
-                {/* Registration form fields */}
+                <form onSubmit={handleRegister}>
+                  <FormGroup>
+                    <FormControl type="text" required value={formData.regName} onChange={(e) => setFormData({...formData, regName: e.target.value})} placeholder=" " />
+                    <FormLabel>Name</FormLabel>
+                  </FormGroup>
+
+                  <FormGroup>
+                    <FormControl type="email" required value={formData.regEmail} onChange={(e) => setFormData({...formData, regEmail: e.target.value})} placeholder=" " />
+                    <FormLabel>E-Mail</FormLabel>
+                  </FormGroup>
+
+                  <FormGroup>
+                    <FormControl type="password" required value={formData.regPassword} onChange={(e) => setFormData({...formData, regPassword: e.target.value})} placeholder=" " />
+                    <FormLabel>Passwort</FormLabel>
+                  </FormGroup>
+
+                  <FormGroup>
+                    <FormControl type="password" required value={formData.regPasswordConfirm} onChange={(e) => setFormData({...formData, regPasswordConfirm: e.target.value})} placeholder=" " />
+                    <FormLabel>Passwort bestätigen</FormLabel>
+                  </FormGroup>
+
+                  <RememberMe>
+                    <input type="checkbox" checked={formData.terms} onChange={(e) => setFormData({...formData, terms: e.target.checked})} />
+                    <label>Ich akzeptiere die AGB</label>
+                  </RememberMe>
+
+                  <AuthButton type="submit">Registrieren</AuthButton>
+                </form>
               </FormInner>
             </AuthForm>
           )}
@@ -97,6 +139,10 @@ const Anmeldung = () => {
     </Main>
   );
 };
+
+// Alle Styled Components bleiben gleich
+
+
 
 const Main = styled.main``;
 
