@@ -1,33 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Konto = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const email = location.state?.email;
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  const user = users.find(u => u.email === email);
+  if (!isLoggedIn || !currentUser) {
+    return <Main><p style={{ textAlign: 'center' }}>Du bist nicht angemeldet.</p></Main>;
+  }
 
-  if (!user) return <Main><p style={{ textAlign: 'center' }}>Benutzer nicht gefunden.</p></Main>;
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+    navigate('/anmeldung');
+  };
 
   return (
     <Main>
       <AuthHeroParallax>
         <ParallaxContent>
           <h1 className="fade-in">Mein Konto</h1>
-          <p className="fade-in">Willkommen zurück, {user.name}!</p>
+          <p className="fade-in">Willkommen zurück, {currentUser.name}!</p>
         </ParallaxContent>
       </AuthHeroParallax>
 
       <AuthContainer>
         <AccountCard>
           <h2>Kontoinformationen</h2>
-          <InfoItem><strong>Name:</strong> {user.name}</InfoItem>
-          <InfoItem><strong>E-Mail:</strong> {user.email}</InfoItem>
+          <InfoItem><strong>Name:</strong> {currentUser.name}</InfoItem>
+          <InfoItem><strong>E-Mail:</strong> {currentUser.email}</InfoItem>
 
-          <LogoutButton onClick={() => navigate('/')}>Abmelden</LogoutButton>
+          <LogoutButton onClick={handleLogout}>Abmelden</LogoutButton>
         </AccountCard>
       </AuthContainer>
     </Main>
