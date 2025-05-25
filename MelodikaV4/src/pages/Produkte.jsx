@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import { useCart } from '../context/CartContext'; // ✅ Hinzugefügt
 
 const products = [
   {
@@ -21,12 +22,14 @@ const products = [
       "Gewicht": "250g"
     }
   },
-  // Add other products...
+  // Weitere Produkte können hier ergänzt werden...
 ];
 
 const Produkte = () => {
   const { id } = useParams();
   const product = products.find(p => p.id === Number(id)) || products[0];
+
+  const { addToCart } = useCart(); // ✅ Hook aus dem Kontext
 
   return (
     <ProductPageContainer>
@@ -61,13 +64,22 @@ const Produkte = () => {
             </SpecsGrid>
           </SpecsSection>
 
-          <AddToCartButton>In den Warenkorb</AddToCartButton>
+          <AddToCartButton onClick={() => addToCart({ 
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: 1 
+          })}>
+            In den Warenkorb
+          </AddToCartButton>
         </ProductInfo>
       </ProductGrid>
     </ProductPageContainer>
   );
 };
 
+// Styling unverändert – wie in deiner Originaldatei
 const ProductPageContainer = styled.div`
   max-width: 1200px;
   margin: 40px auto;
