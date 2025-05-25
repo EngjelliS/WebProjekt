@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import App from "./App";
 import { createGlobalStyle } from "styled-components";
+import { CartProvider } from './context/CartContext';
 
 const GlobalStyle = createGlobalStyle`
   /* Animation Keyframes */
@@ -39,7 +40,9 @@ ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
     <ThemeProvider>
-      <App /> {/* Wrap App component with ThemeProvider */}
+      <CartProvider>
+        <App />
+      </CartProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
