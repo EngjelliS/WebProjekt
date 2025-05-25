@@ -7,6 +7,7 @@ import Hilfe from '../pages/Hilfe';
 import UeberUns from '../pages/UeberUns';
 import Anmeldung from '../pages/Anmeldung';
 import Impressum from '../pages/Impressum';
+import Konto from '../pages/Konto';
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
       <Route path="/ueber-uns" element={<UeberUns />} />
       <Route path="/anmeldung" element={<Anmeldung />} />
       <Route path="/impressum" element={<Impressum />} />
+      <Route path="/konto" element={<Konto />} /> {/* ✅ NEU */}
     </Routes>
   );
 };
