@@ -17,28 +17,33 @@ const Anmeldung = () => {
   });
   const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    const rememberedEmail = localStorage.getItem('rememberedEmail');
-    if (rememberedEmail) {
-      setFormData(prev => ({ ...prev, email: rememberedEmail, remember: true }));
-    }
-  }, []);
+useEffect(() => {
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  const currentUser = localStorage.getItem("currentUser");
+  if (isLoggedIn && currentUser && activeTab === 'login') {
+    navigate('/konto');
+  }
+}, [navigate, activeTab]);
+
 
   const handleLogin = (e) => {
     e.preventDefault();
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find(u => u.email === formData.email && u.password === formData.password);
     if (user) {
-      if (formData.remember) {
-        localStorage.setItem('rememberedEmail', formData.email);
-      } else {
-        localStorage.removeItem('rememberedEmail');
-      }
-      setMessage('Erfolgreich angemeldet!');
-      navigate('/konto', { state: { email: user.email } }); // ✅ NEU: Weiterleitung
-    } else {
-      setMessage('E-Mail oder Passwort ist falsch.');
-    }
+  if (formData.remember) {
+    localStorage.setItem('rememberedEmail', formData.email);
+  } else {
+    localStorage.removeItem('rememberedEmail');
+  }
+
+  localStorage.setItem('isLoggedIn', 'true');
+  localStorage.setItem('currentUser', JSON.stringify(user));
+
+  setMessage('Erfolgreich angemeldet!');
+  navigate('/konto');
+}
+
   };
 
   const handleRegister = (e) => {
@@ -53,9 +58,12 @@ const Anmeldung = () => {
   }
 
   users.push({ name: regName, email: regEmail, password: regPassword });
-  localStorage.setItem('users', JSON.stringify(users));
-  setMessage('Registrierung erfolgreich!');
-  navigate('/konto', { state: { email: regEmail } });
+localStorage.setItem('users', JSON.stringify(users));
+localStorage.setItem('isLoggedIn', 'true');
+localStorage.setItem('currentUser', JSON.stringify({ name: regName, email: regEmail }));
+setMessage('Registrierung erfolgreich!');
+navigate('/konto');
+
 };
 
   return (
