@@ -1,7 +1,9 @@
-import styled, { css } from 'styled-components'; 
+import styled, { css } from 'styled-components';
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 
 const Anmeldung = () => {
+  const navigate = useNavigate(); 
   const [activeTab, setActiveTab] = useState('login');
   const [formData, setFormData] = useState({
     email: '',
@@ -33,26 +35,28 @@ const Anmeldung = () => {
         localStorage.removeItem('rememberedEmail');
       }
       setMessage('Erfolgreich angemeldet!');
+      navigate('/konto', { state: { email: user.email } }); // ✅ NEU: Weiterleitung
     } else {
       setMessage('E-Mail oder Passwort ist falsch.');
     }
   };
 
   const handleRegister = (e) => {
-    e.preventDefault();
-    const { regEmail, regPassword, regPasswordConfirm, regName, terms } = formData;
-    if (!terms) return setMessage('Bitte akzeptiere die AGB.');
-    if (regPassword !== regPasswordConfirm) return setMessage('Passwörter stimmen nicht überein.');
+  e.preventDefault();
+  const { regEmail, regPassword, regPasswordConfirm, regName, terms } = formData;
+  if (!terms) return setMessage('Bitte akzeptiere die AGB.');
+  if (regPassword !== regPasswordConfirm) return setMessage('Passwörter stimmen nicht überein.');
 
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    if (users.find(u => u.email === regEmail)) {
-      return setMessage('E-Mail ist bereits registriert.');
-    }
-    users.push({ name: regName, email: regEmail, password: regPassword });
-    localStorage.setItem('users', JSON.stringify(users));
-    setMessage('Registrierung erfolgreich. Jetzt anmelden.');
-    setActiveTab('login');
-  };
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  if (users.find(u => u.email === regEmail)) {
+    return setMessage('E-Mail ist bereits registriert.');
+  }
+
+  users.push({ name: regName, email: regEmail, password: regPassword });
+  localStorage.setItem('users', JSON.stringify(users));
+  setMessage('Registrierung erfolgreich!');
+  navigate('/konto', { state: { email: regEmail } });
+};
 
   return (
     <Main>
