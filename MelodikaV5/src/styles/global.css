@@ -1,0 +1,313 @@
+/* 
+ * global.css
+ * Definiert globale Styles für die gesamte Melodika Website
+ * Importiert die CSS-Variablen
+ */
+
+ @import './variables.css';
+
+ /* Reset und Base Styles */
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ html {
+   scroll-behavior: smooth;
+   font-size: 62.5%; /* 10px base für einfachere rem-Berechnungen */
+ }
+ 
+ body {
+   font-family: var(--font-family);
+   background-color: var(--background-primary);
+   color: var(--text-primary);
+   line-height: var(--body-line-height);
+   font-size: var(--font-size-base);
+   transition: background-color var(--transition-base), color var(--transition-base);
+   overflow-x: hidden;
+ }
+ 
+ /* Allgemeine Typografie */
+ h1, h2, h3, h4, h5, h6 {
+   line-height: var(--heading-line-height);
+   font-weight: var(--font-weight-semibold);
+   margin-bottom: var(--spacing-lg);
+ }
+ 
+ h1 {
+   font-size: var(--font-size-8xl);
+ }
+ 
+ h2 {
+   font-size: var(--font-size-7xl);
+ }
+ 
+ h3 {
+   font-size: var(--font-size-2xl);
+ }
+ 
+ p {
+   margin-bottom: var(--spacing-lg);
+ }
+ 
+ a {
+   color: var(--accent-color);
+   text-decoration: none;
+   transition: color var(--transition-base);
+ }
+ 
+ a:hover {
+   color: var(--accent-hover);
+ }
+ 
+ ul, ol {
+   list-style-position: inside;
+   /* margin-bottom: var(--spacing-lg); */
+ }
+ 
+ img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+ }
+ 
+ /* Container */
+ .container {
+   width: 100%;
+   max-width: var(--content-width);
+   margin: 0 auto;
+   padding: 0 var(--spacing-lg);
+ }
+ 
+ .container-fluid {
+   width: 100%;
+   padding: 0 var(--spacing-lg);
+ }
+ 
+ /* Section Styles */
+ section {
+   padding: var(--spacing-4xl) 0;
+ }
+ 
+ .section-heading {
+   text-align: center;
+   font-size: var(--font-size-6xl);
+   margin-bottom: var(--spacing-3xl);
+ }
+ 
+ /* Button Styles */
+ .btn {
+   display: inline-block;
+   text-decoration: none;
+   cursor: pointer;
+   font-size: var(--font-size-lg);
+   font-weight: var(--font-weight-medium);
+   padding: var(--spacing-md) var(--spacing-xl);
+   border-radius: var(--radius-full);
+   transition: all var(--transition-base);
+   text-align: center;
+   border: none;
+ }
+ 
+ .btn-primary {
+   background-color: var(--accent-color);
+   color: white;
+ }
+ 
+ .btn-primary:hover {
+   background-color: var(--accent-hover);
+   color: white;
+ }
+ 
+ .btn-outline {
+   background-color: transparent;
+   border: 1px solid var(--accent-color);
+   color: var(--accent-color);
+ }
+ 
+ .btn-outline:hover {
+   background-color: var(--accent-color);
+   color: white;
+ }
+ 
+ /* Grid Layouts */
+ .grid {
+   display: grid;
+   gap: var(--spacing-xl);
+ }
+ 
+ .grid-2 {
+   grid-template-columns: repeat(2, 1fr);
+ }
+ 
+ .grid-3 {
+   grid-template-columns: repeat(3, 1fr);
+ }
+ 
+ .grid-4 {
+   grid-template-columns: repeat(4, 1fr);
+ }
+ 
+ /* Flexbox Layouts */
+ .flex {
+   display: flex;
+ }
+ 
+ .flex-column {
+   flex-direction: column;
+ }
+ 
+ .justify-between {
+   justify-content: space-between;
+ }
+ 
+ .justify-center {
+   justify-content: center;
+ }
+ 
+ .align-center {
+   align-items: center;
+ }
+ 
+ .flex-wrap {
+   flex-wrap: wrap;
+ }
+ 
+ /* Spacing Utilities */
+ .mt-1 { margin-top: var(--spacing-xs); }
+ .mt-2 { margin-top: var(--spacing-sm); }
+ .mt-3 { margin-top: var(--spacing-md); }
+ .mt-4 { margin-top: var(--spacing-lg); }
+ .mt-5 { margin-top: var(--spacing-xl); }
+ 
+ .mb-1 { margin-bottom: var(--spacing-xs); }
+ .mb-2 { margin-bottom: var(--spacing-sm); }
+ .mb-3 { margin-bottom: var(--spacing-md); }
+ .mb-4 { margin-bottom: var(--spacing-lg); }
+ .mb-5 { margin-bottom: var(--spacing-xl); }
+ 
+ .mx-auto { 
+   margin-left: auto;
+   margin-right: auto;
+ }
+ 
+ /* Text Utilities */
+ .text-center { text-align: center; }
+ .text-left { text-align: left; }
+ .text-right { text-align: right; }
+ 
+ .text-primary { color: var(--text-primary); }
+ .text-secondary { color: var(--text-secondary); }
+ .text-accent { color: var(--accent-color); }
+ .text-error { color: var(--error-color); }
+ 
+ /* Display Utilities */
+ .d-none { display: none; }
+ .d-block { display: block; }
+ .d-inline-block { display: inline-block; }
+ .d-flex { display: flex; }
+ .d-grid { display: grid; }
+ 
+ /* Cards */
+ .card {
+   background-color: var(--card-background);
+   border-radius: var(--radius-lg);
+   box-shadow: var(--card-shadow);
+   overflow: hidden;
+   transition: transform var(--transition-base), box-shadow var(--transition-base);
+ }
+ 
+ .card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+ }
+ 
+ .card-body {
+   padding: var(--spacing-xl);
+ }
+ 
+ /* Animation Utilities */
+ .fade-in {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity var(--transition-slow), transform var(--transition-slow);
+ }
+ 
+ .fade-in.visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+ 
+ .slide-in {
+   opacity: 0;
+   transform: translateX(-40px);
+   transition: opacity var(--transition-slow), transform var(--transition-slow);
+ }
+ 
+ .slide-in.visible {
+   opacity: 1;
+   transform: translateX(0);
+ }
+ 
+ 
+ /* Responsive Media Queries */
+ @media screen and (max-width: 1200px) {
+   h1 {
+     font-size: var(--font-size-7xl);
+   }
+   
+   h2 {
+     font-size: var(--font-size-6xl);
+   }
+ }
+ 
+ @media screen and (max-width: 1024px) {
+   .grid-4 {
+     grid-template-columns: repeat(2, 1fr);
+   }
+   
+   h1 {
+     font-size: var(--font-size-6xl);
+   }
+   
+   h2 {
+     font-size: var(--font-size-5xl);
+   }
+ }
+ 
+ @media screen and (max-width: 768px) {
+   .grid-3, .grid-2 {
+     grid-template-columns: 1fr;
+   }
+   
+   h1 {
+     font-size: var(--font-size-5xl);
+   }
+   
+   h2 {
+     font-size: var(--font-size-4xl);
+   }
+   
+   .section-heading {
+     font-size: var(--font-size-4xl);
+   }
+ }
+ 
+ @media screen and (max-width: 480px) {
+   .grid-4 {
+     grid-template-columns: 1fr;
+   }
+   
+   h1 {
+     font-size: var(--font-size-4xl);
+   }
+   
+   h2 {
+     font-size: var(--font-size-3xl);
+   }
+   
+   .section-heading {
+     font-size: var(--font-size-3xl);
+   }
+ }

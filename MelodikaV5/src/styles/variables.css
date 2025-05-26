@@ -1,0 +1,120 @@
+/* 
+ * variables.css
+ * Definiert alle globalen CSS Variablen für das Melodika Theme
+ * Enthält sowohl Light als auch Dark Mode Variablen
+ */
+
+ :root {
+    /* Base Font & Size Variables */
+    --font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    --base-font-size: 1.6rem;
+    --heading-line-height: 1.1;
+    --body-line-height: 1.5;
+    
+    /* Font Weight Variables */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Font Size Variables */
+    --font-size-xs: 1.2rem;
+    --font-size-sm: 1.4rem;
+    --font-size-base: 1.6rem;
+    --font-size-lg: 1.7rem;
+    --font-size-xl: 2rem;
+    --font-size-2xl: 2.4rem;
+    --font-size-3xl: 2.6rem;
+    --font-size-4xl: 3.2rem;
+    --font-size-5xl: 3.6rem;
+    --font-size-6xl: 4rem;
+    --font-size-7xl: 4.8rem;
+    --font-size-8xl: 5.6rem;
+    
+    /* Spacing Variables */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+    --spacing-2xl: 40px;
+    --spacing-3xl: 60px;
+    --spacing-4xl: 100px;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-full: 980px;
+    --radius-round: 50%;
+    
+    /* Animation Timing */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.6s ease;
+    
+    /* Layout Variables */
+    --max-width: 1440px;
+    --content-width: 1200px;
+    --nav-height: 44px;
+    
+    /* Z-Index Layers */
+    --z-index-below: -1;
+    --z-index-base: 1;
+    --z-index-above: 10;
+    --z-index-header: 100;
+    --z-index-popup: 200;
+    --z-index-modal: 300;
+    --z-index-floating: 900;
+    --z-index-highest: 1000;
+    
+    /* Light Theme Variables */
+    --background-primary: #ffffff;
+    --background-secondary: #f5f5f7;
+    --text-primary: #1d1d1f;
+    --text-secondary: #656565;
+    --accent-color: #0071e3;
+    --accent-hover: #0077ed;
+    --border-color: #d2d2d7;
+    --footer-background: #f5f5f7;
+    --card-background: #ffffff;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --gradient-start: #fbfbfd;
+    --gradient-end: #f5f5f7;
+    --error-color: #c94a4a;
+    --success-color: #4ac97c;
+    --warning-color: #e6a210;
+    --hover-overlay: rgba(0, 0, 0, 0.03);
+    --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --button-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --overlay-dark: rgba(0, 0, 0, 0.5);
+    --overlay-light: rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Dark Theme Variables */
+  [data-theme="dark"] {
+    --background-primary: #000000;
+    --background-secondary: #1d1d1f;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --accent-color: #2997ff;
+    --accent-hover: #46abff;
+    --border-color: #424245;
+    --footer-background: #1d1d1f;
+    --card-background: #1d1d1f;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --gradient-start: #000000;
+    --gradient-end: #1d1d1f;
+    --hover-overlay: rgba(255, 255, 255, 0.05);
+    --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    --button-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Media Query Breakpoints */
+  :root {
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+  }

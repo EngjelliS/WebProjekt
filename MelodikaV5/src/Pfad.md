@@ -1,0 +1,9 @@
+melodika-react/src/{components,pages,context,hooks,styles,assets}
+melodika-react/src/App.jsx
+melodika-react/src/main.jsx
+melodika-react/src/components/{Header,Footer,ProductCard,HeroSection,BrandPromise,BrandShowcase}.jsx
+melodika-react/src/pages/{Home,Products,ProductDetails,Orders,Help,About}.jsx
+melodika-react/src/context/ThemeContext.jsx
+melodika-react/src/hooks/{useScroll,useParallax,useAnimation}.jsx
+melodika-react/src/styles/{variables,global,components}.css
+melodika-react/public
