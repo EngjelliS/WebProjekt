@@ -38,21 +38,21 @@ const Home = () => {
       title: 'AudioPro HD',
       description: 'Klangqualität auf Studio-Niveau für präzises Hören',
       image: '/Produkt1.jpeg',
-      detailUrl: '/produktdetails/1'
+      detailUrl: '/produkte/1'
     },
     {
       id: 2,
       title: 'FlexiMic Stand',
       description: 'Robustes, höhenverstellbares Stativ',
       image: '/Produkt2.jpeg',
-      detailUrl: '/produktdetails/2'
+      detailUrl: '/produkte/2'
     },
     {
       id: 3,
       title: 'TuneMate Pro',
       description: 'Kompakter Clip-On-Tuner für Saiteninstrumente',
       image: '/Produkt3.jpeg',
-      detailUrl: '/produktdetails/3'
+      detailUrl: '/produkte/3'
     }
   ];
 
