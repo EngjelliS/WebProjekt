@@ -7,17 +7,17 @@ const HeroSection = ({ currentPage = "home" }) => {
   const getBackgroundImage = () => {
     switch(currentPage) {
       case 'home':
-        return '/public/Produkt2.jpeg'; // Startseite
+        return '/Produkt2.jpeg'; // Startseite
       case 'products':
-        return '/public/Produkt3.jpeg'; // Produktseite
+        return '/Produkt3.jpeg'; // Produktseite
       case 'about':
-        return '/public/Produkt6.jpeg'; // Über uns Seite
+        return '/Produkt6.jpeg'; // Über uns Seite
       case 'help':
-        return '/public/Produkt5.jpeg'; // Kontaktseite
+        return '/Produkt5.jpeg'; // Kontaktseite
       case 'login':
-        return '/public/Produkt1.jpeg';
+        return '/Produkt1.jpeg';
       default:
-        return '/public/Produkt3.jpeg'; // Standard-Bild
+        return '/Produkt3.jpeg'; // Standard-Bild
     }
   };
 

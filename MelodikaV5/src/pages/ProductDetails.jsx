@@ -16,7 +16,7 @@ export const productsData = [
     price: 149.99,
     priceText: "149,99 €",
     deliveryInfo: "Lieferung: 3-5 Werktage",
-    image: "/public/Produkt1.jpeg",
+    image: "/Produkt1.jpeg",
     features: [
       {
         title: "Klangqualität auf Studio-Niveau",
@@ -56,7 +56,7 @@ export const productsData = [
     price: 129.99,
     priceText: "129,99 €",
     deliveryInfo: "Lieferung: 2-4 Werktage",
-    image: "/public/Produkt2.jpeg",
+    image: "/Produkt2.jpeg",
     features: [
       {
         title: "Kristallklare Aufnahmequalität",
@@ -96,7 +96,7 @@ export const productsData = [
     price: 19.99,
     priceText: "19,99 €",
     deliveryInfo: "Lieferung: 1-3 Werktage",
-    image: "/public/Produkt3.jpeg",
+    image: "/Produkt3.jpeg",
     features: [
       {
         title: "Hochpräzise Stimmgenauigkeit",
@@ -136,7 +136,7 @@ export const productsData = [
     price: 29.99,
     priceText: "29,99 €",
     deliveryInfo: "Lieferung: 1-3 Werktage",
-    image: "/public/Produkt4.jpeg",
+    image: "/Produkt4.jpeg",
     features: [
       {
         title: "Hochpräzise Taktgebung",
@@ -176,7 +176,7 @@ export const productsData = [
     price: 59.99,
     priceText: "59,99 €",
     deliveryInfo: "Lieferung: 2-4 Werktage",
-    image: "/public/Produkt5.jpeg",
+    image: "/Produkt5.jpeg",
     features: [
       {
         title: "Präzise Ansprache",
@@ -216,7 +216,7 @@ export const productsData = [
     price: 89.99,
     priceText: "89,99 €",
     deliveryInfo: "Lieferung: 2-4 Werktage",
-    image: "/public/Produkt6.jpeg",
+    image: "/Produkt6.jpeg",
     features: [
       {
         title: "Kraftvoller Distortion-Sound",
