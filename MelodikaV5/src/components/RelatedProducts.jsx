@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const RelatedProducts = ({ products }) => {
-  // If no related products, don't render the component
+  
   if (!products || products.length === 0) {
     return null;
   }

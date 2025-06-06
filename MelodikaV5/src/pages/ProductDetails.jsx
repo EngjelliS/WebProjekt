@@ -12,9 +12,11 @@ export const productsData = [
   {
     id: 1,
     name: "Studiokopfhörer AudioPro HD",
+    title: "Studiokopfhörer AudioPro HD", 
     description: "Klangqualität auf Studio-Niveau für präzises Hören",
     price: 149.99,
     priceText: "149,99 €",
+    category: 'audio', 
     deliveryInfo: "Lieferung: 3-5 Werktage",
     image: "/Produkt1.jpeg",
     features: [
@@ -52,9 +54,11 @@ export const productsData = [
   {
     id: 2,
     name: "Mikrofonstativ FlexiMic Stand",
+    title: "Mikrofonstativ FlexiMic Stand", 
     description: "Professionelles USB-Mikrofon für Streaming und Aufnahmen",
     price: 129.99,
     priceText: "129,99 €",
+    category: 'audio', 
     deliveryInfo: "Lieferung: 2-4 Werktage",
     image: "/Produkt2.jpeg",
     features: [
@@ -92,9 +96,11 @@ export const productsData = [
   {
     id: 3,
     name: "Gitarren-Tuner TuneMate Pro",
+    title: "Gitarren-Tuner TuneMate Pro", 
     description: "Kompakter Clip-On-Tuner für Saiteninstrumente",
     price: 19.99,
     priceText: "19,99 €",
+    category: 'accessories', 
     deliveryInfo: "Lieferung: 1-3 Werktage",
     image: "/Produkt3.jpeg",
     features: [
@@ -132,9 +138,11 @@ export const productsData = [
   {
     id: 4,
     name: "Digitales Metronom TempoMaster Pro",
+    title: "Digitales Metronom TempoMaster Pro", 
     description: "Digitales Metronom mit präziser Taktgebung",
     price: 29.99,
     priceText: "29,99 €",
+    category: 'accessories', 
     deliveryInfo: "Lieferung: 1-3 Werktage",
     image: "/Produkt4.jpeg",
     features: [
@@ -172,9 +180,11 @@ export const productsData = [
   {
     id: 5,
     name: "Keyboard-Pedal ProSustain FX",
+    title: "Keyboard-Pedal ProSustain FX", 
     description: "Präzises Sustain-Pedal für Keyboards",
     price: 59.99,
     priceText: "59,99 €",
+    category: 'accessories', 
     deliveryInfo: "Lieferung: 2-4 Werktage",
     image: "/Produkt5.jpeg",
     features: [
@@ -212,9 +222,11 @@ export const productsData = [
   {
     id: 6,
     name: "Gitarren-Effektpedal RockRiot Distortion X",
+    title: "Gitarren-Effektpedal RockRiot Distortion X", 
     description: "Vielseitiges Effektpedal für Gitarren",
     price: 89.99,
     priceText: "89,99 €",
+    category: 'effects', 
     deliveryInfo: "Lieferung: 2-4 Werktage",
     image: "/Produkt6.jpeg",
     features: [
