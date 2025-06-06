@@ -14,8 +14,10 @@ const Products = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const location = useLocation();
 
+  // Initialize scroll animation hook
   useScrollAnimation();
 
+  // Extract search query from URL
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const searchQuery = urlParams.get('search');
@@ -24,15 +26,16 @@ const Products = () => {
     }
   }, [location.search]);
 
+  // Fetch products (in a real application, this would be an API call)
   useEffect(() => {
+    // Simulate a fetch request
     setTimeout(() => {
       const productData = [
         {
           id: 1,
           title: 'Studiokopfhörer AudioPro HD',
           description: 'Klangqualität auf Studio-Niveau für präzises Hören',
-          price: 149.99, 
-          priceText: "149,99 €", 
+          price: "149,99 €",
           image: 'Produkt1.jpeg',
           category: 'audio'
         },
@@ -40,8 +43,7 @@ const Products = () => {
           id: 2,
           title: 'Mikrofonstativ FlexiMic Stand',
           description: 'Professionelles USB-Mikrofon für Streaming und Aufnahmen',
-          price: 34.99,
-          priceText: "34,99 €",
+          price: "34,99 €",
           image: 'Produkt2.jpeg',
           category: 'recording'
         },
@@ -49,8 +51,7 @@ const Products = () => {
           id: 3,
           title: 'Gitarren-Tuner TuneMate Pro',
           description: 'Kompakter Clip-On-Tuner für Saiteninstrumente',
-          price: 19.99,
-          priceText: "19,99 €",
+          price: "19,99 €",
           image: 'Produkt3.jpeg',
           category: 'guitar'
         },
@@ -58,8 +59,7 @@ const Products = () => {
           id: 4,
           title: 'Digitales Metronom TempoMaster Pro',
           description: 'Digitales Metronom mit präziser Taktgebung',
-          price: 39.99,
-          priceText: "39,99 €",
+          price: "39,99 €",
           image: 'Produkt4.jpeg',
           category: 'accessories'
         },
@@ -67,8 +67,7 @@ const Products = () => {
           id: 5,
           title: 'Keyboard-Pedal ProSustain FX',
           description: 'Präzises Sustain-Pedal für Keyboards',
-          price: 24.99,
-          priceText: "24,99 €",
+          price: "24,99 €",
           image: 'Produkt5.jpeg',
           category: 'keyboard'
         },
@@ -76,8 +75,7 @@ const Products = () => {
           id: 6,
           title: 'Gitarren-Effektpedal RockRiot Distortion X',
           description: 'Vielseitiges Effektpedal für Gitarren',
-          price: 59.99,
-          priceText: "59,99 €",
+          price: "59,99 €",
           image: 'Produkt6.jpeg',
           category: 'guitar'
         }
@@ -88,6 +86,7 @@ const Products = () => {
     }, 500);
   }, []);
 
+  // Filter products based on search term
   useEffect(() => {
     if (!searchTerm) {
       setFilteredProducts(products);
@@ -103,12 +102,8 @@ const Products = () => {
 
   const clearSearch = () => {
     setSearchTerm('');
+    // Update URL to remove search parameter
     window.history.replaceState({}, document.title, "/produkte");
-  };
-
-  // Change product links to include .html
-  const handleProductClick = (productId) => {
-    window.location.href = `/produkte/${productId}.html`;
   };
 
   return (
@@ -153,7 +148,7 @@ const Products = () => {
             ) : (
               <div className="products-grid">
                 {filteredProducts.map(product => (
-                  <div key={product.id} className="product-item-container" onClick={() => handleProductClick(product.id)}>
+                  <div key={product.id} className="product-item-container" onClick={() => window.location.href = `/produkte/${product.id}`}>
                     <ProductCard product={product} />
                   </div>
                 ))}

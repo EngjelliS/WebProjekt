@@ -55,7 +55,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/produkte" element={<Products />} />
-              <Route path="/produkte/:id.html" element={<ProductDetails />} />
+              <Route path="/produkte/:id" element={<ProductDetails />} />
               <Route path="/bestelluebersicht" element={<Orders />} />
               <Route path="/hilfe" element={<Help />} />
               <Route path="/ueber-uns" element={<About />} />
@@ -64,7 +64,7 @@ function App() {
               <Route path="/nutzungsbedingungen" element={<TermsOfService />} />
               <Route path="/datenschutzrichtlinien" element={<PrivacyPolicy />} />
               <Route path="/impressum" element={<LegalNotice />} />
-              {}
+              {/* Catch-all route for 404 - can be created later */}
               <Route path="*" element={<div>404 - Seite nicht gefunden</div>} />
             </Routes>
           </main>
