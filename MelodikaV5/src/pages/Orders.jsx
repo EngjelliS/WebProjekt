@@ -102,7 +102,7 @@ const Orders = () => {
           {orders.length === 0 ? (
             <div className="no-orders">
               <p>Sie haben noch keine Bestellungen getätigt.</p>
-              <a href="/products" className="cta-button">Produkte entdecken</a>
+              <a href="/produkte" className="cta-button">Produkte entdecken</a>
             </div>
           ) : (
             <div className="orders-list">
